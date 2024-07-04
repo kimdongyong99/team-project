@@ -31,8 +31,7 @@ class Post(member):
     def post_display(self):
         print(f'제목 : {self.title}')
         print(f'내용 : {self.content}')
-        
-        pass
+    
     def p_format_register(self):
         return {'제목': self.title, '내용': self.content, '글쓴이': self.author}
         # posts 리스트에 추가하기 위해 포맷 만들기
