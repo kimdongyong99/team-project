@@ -27,7 +27,7 @@ m2.register()
 m3.register()
 pprint(members)
 # title, content, author
-class Post():
+class Post:
     def __init__(self,title, content,user_name):
         self.title = title
         self.content = content
