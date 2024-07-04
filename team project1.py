@@ -19,8 +19,17 @@ m1 = member('정순겸','gyum9779',1234) #정보저장을 위한 필요 데이�
 m1.display()
 m1.register()
 print(members)
-
+# title, content, author
 class Post:
+    def __init__(self,title, content,author):
+        self.title = title
+        self.content = content
+        self.author = author
+    def post_display(self):
+        
+        pass
+        
+        pass
     # TODO : 코드 구현이 필요합니다.
     pass
 
