@@ -56,22 +56,26 @@ class Post:
 cnt = 0
 def use_input():
     while True:
-        a = int(input("1 또는 2를 입력하세요(회원등록: 1, 게시글 작성: 2)"))
-        if (a !=1) and (a !=2):
-            print("다시 입력하세요. 회원등록: 1, 게시글: 2")
+        a = int(input("1 또는 2를 입력하세요(회원등록: 1, 게시글 작성: 2, 회원리스트: 3, 게시글리스트: 4, 종료: 5): "))
+        if (a !=1) and (a !=2) and (a !=3) and (a != 4) and (a !=5):
+            print("다시 입력하세요. (회원등록: 1, 게시글: 2):")
             continue
         if a == 1:
-            mem_name = input("이름을 입력하세요")
-            mem_user_name = input("UserName을 입력하세요")
-            mem_password = input("비밀번호를 입력하세요")
+            mem_name = input("이름을 입력하세요: ")
+            mem_user_name = input("UserName을 입력하세요: ")
+            mem_password = input("비밀번호를 입력하세요: ")
             mem = Member(mem_name,mem_user_name,mem_password)
-            mem.register()
-            break
+            return mem.register()
         elif a == 2:
-            for_post_title = input("제목을 입력하세요")
-            for_post_content = input("내용을 입력하세요")
-            for_post_author = input("UserName을 입력하세요")
+            for_post_title = input("제목을 입력하세요: ")
+            for_post_content = input("내용을 입력하세요: ")
+            for_post_author = input("UserName을 입력하세요: ")
             for_post = Post(for_post_title,for_post_content,for_post_author)
-            for_post.p_register()
+            return for_post.p_register()
+        elif a == 3:
+            pprint(members)
+        elif a ==4:
+            pprint(posts)
+        elif a == 5:
             break
 use_input()
