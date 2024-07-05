@@ -33,9 +33,6 @@ class Member:
 # m1 = Member('이상혁', 'faker', 1234)
 # m2 = Member('류민석', 'keria', 5678)
 # m3 = Member('최우제', 'zeus', 91011)
-
-for i in members:
-    print(members[1]['name'])
 #         #정보저장을 위한 필요 데이터 입력
 # m1.display()
 # m1.register()
@@ -85,7 +82,7 @@ class Post:
 # m3_3.p_register()
 # pprint(posts)
 
-
+user_name_list=[]
 def use_input():
     while True:
         a = int(input("숫자를 입력하세요(회원등록: 1, 게시글 작성: 2, 회원리스트: 3, 게시글리스트: 4, 종료: 5): "))
@@ -102,6 +99,15 @@ def use_input():
             for_post_title = input("제목을 입력하세요: ")
             for_post_content = input("내용을 입력하세요: ")
             for_post_author = input("UserName을 입력하세요: ")
+            for k in members:
+                    k_user_name = k['유저네임']
+                    user_name_list.append(k_user_name)
+            if not members:
+                print("등록된 회원이 아닙니다. 회원등록을 먼저 해주세요")
+                continue
+            elif not for_post_author in user_name_list:
+                print("등록된 회원이 아닙니다. 회원등록을 먼저 해주세요")
+                continue
             for_post = Post(for_post_title, for_post_content, for_post_author)
             for_post.p_register()
         elif a == 3:
@@ -110,19 +116,20 @@ def use_input():
                 #비어있는 리스트의 bool 값은 false
             else:
                 for i in members:
-                    i_name = i['이름']
-                    i_user_name = i['유저네임']
-                    print(f'이름: {i_name}  유저네임: {i_user_name}')
-                    # print(f'이름: {i['이름']}  유저네임: {i['유저네임']}')
+                    # i_name = i['이름']
+                    # i_user_name = i['유저네임']
+                    # print(f'이름: {i_name}  유저네임: {i_user_name}')
+                    print(f"이름: {i['이름']}  유저네임: {i['유저네임']}")
                     #비밀번호 표시 x
         elif a == 4:
             if not posts:
                 print("등록된 게시물이 없습니다")
             else:
                 for j in posts:
-                    j_author = j['글쓴이']
-                    j_title = j['제목']
-                    print(f'작성자: {j_author}  제목: {j_title}')
+                #     j_author = j['글쓴이']
+                #     j_title = j['제목']
+                #     print(f'작성자: {j_author}  제목: {j_title}')
+                    print(f"이름: {j['글쓴이']}  유저네임: {j['제목']}")
         elif a == 5:
             break
 
