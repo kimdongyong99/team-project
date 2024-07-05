@@ -55,32 +55,30 @@ class Post:
         return {'제목': self.title, '내용': self.content, '글쓴이': self.author}
         # posts 리스트에 추가하기 위해 포맷 만들기
 
-    def p_register(self):
+    def p_register(self): #p_format_register함수를 통해 만들어진 포맷으로 리스트에 append 하기
         posts.append(self.p_format_register())
 
-
-#         # 코드실행
-# m1_1 = Post('전적','1337전 907승 430패, 승률 67.8%, 총 킬 4725, 총 데스 2845, 총 어시스트 7314, KDA 4.3, 킬 관여율 64.9%','faker')
-# m1_2 = Post('MBTI','ENFP','faker')
-# m1_3 = Post('솔랭 닉네임','hide on bush. 일명 하온부','faker')
-# m2_1 = Post('별명','역천괴 - 역대급 천재 괴물, 울한울 -울어..한없이 울어..','keria' )
-# m2_2 = Post('MBTI','ISFP','keria' )
-# m2_3 = Post('업적','2022년 1월 1일, 페이커와의 인스타그램 맞팔로우에 성공','keria' )
-# m3_1 = Post('오트와 우트','패트와 매트에서 따온, 오너와 함께 불리는 듀오 별명','zeus')
-# m3_2 = Post('MBTI','INFP','zeus')
-# m3_3 = Post('생년월일','2004년 1월 31일','zeus')
-#         # Post 작성
-# m1_1.post_display()
-# m1_1.p_register()
-# m1_2.p_register()
-# m1_3.p_register()
-# m2_1.p_register()
-# m2_2.p_register()
-# m2_3.p_register()
-# m3_1.p_register()
-# m3_2.p_register()
-# m3_3.p_register()
-# pprint(posts)
+    # m1_1 = Post('전적','1337전 907승 430패, 승률 67.8%, 총 킬 4725, 총 데스 2845, 총 어시스트 7314, KDA 4.3, 킬 관여율 64.9%','faker')
+    # m1_2 = Post('MBTI','ENFP','faker')
+    # m1_3 = Post('솔랭 닉네임','hide on bush. 일명 하온부','faker')
+    # m2_1 = Post('별명','역천괴 - 역대급 천재 괴물, 울한울 -울어..한없이 울어..','keria' )
+    # m2_2 = Post('MBTI','ISFP','keria' )
+    # m2_3 = Post('업적','2022년 1월 1일, 페이커와의 인스타그램 맞팔로우에 성공','keria' )
+    # m3_1 = Post('오트와 우트','패트와 매트에서 따온, 오너와 함께 불리는 듀오 별명','zeus')
+    # m3_2 = Post('MBTI','INFP','zeus')
+    # m3_3 = Post('생년월일','2004년 1월 31일','zeus')
+    #         # Post 작성
+    # m1_1.post_display()
+    # m1_1.p_register()
+    # m1_2.p_register()
+    # m1_3.p_register()
+    # m2_1.p_register()
+    # m2_2.p_register()
+    # m2_3.p_register()
+    # m3_1.p_register()
+    # m3_2.p_register()
+    # m3_3.p_register()
+    # pprint(posts)
 
 user_name_list=[]
 def use_input():
@@ -99,13 +97,13 @@ def use_input():
             for_post_title = input("제목을 입력하세요: ")
             for_post_content = input("내용을 입력하세요: ")
             for_post_author = input("UserName을 입력하세요: ")
-            for k in members:
+            for k in members: #맴버리스트에 등록된 유저네임만 모아놓은 새로운 리스트 생성
                     k_user_name = k['유저네임']
                     user_name_list.append(k_user_name)
-            if not members:
+            if not members: #등록된 회원이 없으면 회원등록 먼저 하고 글쓰러 오게 하기
                 print("등록된 회원이 아닙니다. 회원등록을 먼저 해주세요")
                 continue
-            elif not for_post_author in user_name_list:
+            elif not for_post_author in user_name_list: #등록된 회원이 아니면 회원등록 먼저 하고 글쓰러 오게 하기
                 print("등록된 회원이 아닙니다. 회원등록을 먼저 해주세요")
                 continue
             for_post = Post(for_post_title, for_post_content, for_post_author)
