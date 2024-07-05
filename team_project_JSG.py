@@ -58,27 +58,41 @@ class Post:
     def p_register(self): #p_format_register함수를 통해 만들어진 포맷으로 리스트에 append 하기
         posts.append(self.p_format_register())
 
-    # m1_1 = Post('전적','1337전 907승 430패, 승률 67.8%, 총 킬 4725, 총 데스 2845, 총 어시스트 7314, KDA 4.3, 킬 관여율 64.9%','faker')
-    # m1_2 = Post('MBTI','ENFP','faker')
-    # m1_3 = Post('솔랭 닉네임','hide on bush. 일명 하온부','faker')
-    # m2_1 = Post('별명','역천괴 - 역대급 천재 괴물, 울한울 -울어..한없이 울어..','keria' )
-    # m2_2 = Post('MBTI','ISFP','keria' )
-    # m2_3 = Post('업적','2022년 1월 1일, 페이커와의 인스타그램 맞팔로우에 성공','keria' )
-    # m3_1 = Post('오트와 우트','패트와 매트에서 따온, 오너와 함께 불리는 듀오 별명','zeus')
-    # m3_2 = Post('MBTI','INFP','zeus')
-    # m3_3 = Post('생년월일','2004년 1월 31일','zeus')
-    #         # Post 작성
-    # m1_1.post_display()
-    # m1_1.p_register()
-    # m1_2.p_register()
-    # m1_3.p_register()
-    # m2_1.p_register()
-    # m2_2.p_register()
-    # m2_3.p_register()
-    # m3_1.p_register()
-    # m3_2.p_register()
-    # m3_3.p_register()
-    # pprint(posts)
+# m1_1 = Post('전적','1337전 907승 430패, 승률 67.8%, 총 킬 4725, 총 데스 2845, 총 어시스트 7314, KDA 4.3, 킬 관여율 64.9%','faker')
+# m1_2 = Post('성격유형1','MBTI : ENFP','faker')
+# m1_3 = Post('솔랭 닉네임','hide on bush. 일명 하온부','faker')
+# m2_1 = Post('별명','역천괴 - 역대급 천재 괴물, 울한울 -울어..한없이 울어..','keria' )
+# m2_2 = Post('성격유형2','MBTI : ISFP','keria' )
+# m2_3 = Post('업적','2022년 1월 1일, 페이커와의 인스타그램 맞팔로우에 성공','keria' )
+# m3_1 = Post('오트와 우트','패트와 매트에서 따온, 오너와 함께 불리는 듀오 별명','zeus')
+# m3_2 = Post('성격유형3','MBTI : INFP','zeus')
+# m3_3 = Post('생년월일','2004년 1월 31일','zeus')
+#         # Post 작성
+# m1_1.post_display()
+# m1_1.p_register()
+# m1_2.p_register()
+# m1_3.p_register()
+# m2_1.p_register()
+# m2_2.p_register()
+# m2_3.p_register()
+# m3_1.p_register()
+# m3_2.p_register()
+# m3_3.p_register()
+# pprint(posts)
+
+# # 특정 유저가 작성한 게시글 제목 프린트
+# for p in posts:
+#     if p['글쓴이']=='faker':
+#         print(p['제목'])
+    
+    #특정 단어가 content에 포함된 게시글의 제목 프린트
+# title_from_word_list=[]
+# def find_title(word_needed):
+#     for t in posts:
+#         if word_needed in t['내용']:
+#             title_from_word_list.append(t['제목'])
+#     print(title_from_word_list)
+# find_title('MBTI')
 
 user_name_list=[]
 def use_input():
