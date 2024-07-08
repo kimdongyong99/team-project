@@ -18,7 +18,7 @@ class Member:
         # 비밀번호는 보안상의 이유로 안보이게
 
     def format_register(self):
-        for_hashed_pw = self.password + salt
+        for_hashed_pw = str(self.password) + salt
         hashed_pw = hashlib.sha256(for_hashed_pw.encode()).hexdigest()
         #비밀번호 해싱
         return {'이름': self.name, '유저네임': self.user_name, '비밀번호': hashed_pw}
@@ -29,7 +29,6 @@ class Member:
         members.append(self.format_register())
         # for_register에 작성된 포맷으로 members리스트에 추가하기
 
-
 # m1 = Member('이상혁', 'faker', 1234)
 # m2 = Member('류민석', 'keria', 5678)
 # m3 = Member('최우제', 'zeus', 91011)
@@ -39,7 +38,7 @@ class Member:
 # m2.register()
 # m3.register()
 # pprint(members)
-# title, content, author
+# # title, content, author
 class Post:
     def __init__(self, title, content, user_name):
         self.title = title
