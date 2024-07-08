@@ -16,14 +16,18 @@ class Member:  # 각각의 회원정보를 담고 있는 클래스다.
 
     # 회원정보출력
     def display(self):
-        print("name :{0}  username: {1}".format(self.name, self.username))
-
+        for_hashed_pw = self.password
+        hashed_pw = hashlib.sha256(for_hashed_pw.encode()).hexdigest()
+        # 비밀번호 해싱
+        # print("sha",hashed_pw)
+        # return {'이름': self.name, '유저네임': self.username, '비밀번호': hashed_pw}
+        
+        print("name :{0}  username: {1} hashed_pw: {2}".format(self.name, self.username,hashed_pw))
+        # print("data :", self.password)
+    
         # for post in self.posts:
         #     print("title :{} ".format(post.title))
         #     print("content :{} ".format(post.content))
-
-    def pwd_register(self, password):
-        pass
 
 
 # 각각의게시글 관리
@@ -38,8 +42,6 @@ class Post:
         print("content:{0}".format(self.content))
 
 # 관리
-
-
 class working():
     def create_post():
         if len(members) > 0:
@@ -79,7 +81,6 @@ class working():
                 search_word = input("내용을 입력해주세요: \n")
                 for post in posts:
                     if search_word in post.content:
-                        
                         search_content.append(post.content)
             elif search_type == "3":
                 search_word = input("작성자를 입력해주세요: \n")
