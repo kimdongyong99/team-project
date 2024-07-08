@@ -1,20 +1,20 @@
+####게시판 속성
+
 import hashlib
-# 해시 함수 알아보기
 
 # 빈리스트 만들기
 members = []  # 회원들의 정보를 담고 있는 리스트
 posts = []  # 게시글을 담고 있는 리스트
 
-
-class Member:  # 각각의 회원정보를 담고 있는 클래스다.
-
++ __각각의 회원정보를 담고 있는 클래스다.__
+class Member: 
     # 생성자
     def __init__(self, name, username, password) -> None:
         self.name = name
         self.username = username
         self.password = password
 
-    # 회원정보출력
+    # 회원정보출력을 한다. 비밀번호는 해시화하여 출력한다.
     def display(self):
         for_hashed_pw = self.password
         hashed_pw = hashlib.sha256(for_hashed_pw.encode()).hexdigest()
