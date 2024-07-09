@@ -111,9 +111,9 @@ class working():
     # 회원가입시키기
 
     def join():
-        name = input("이름입력")
-        username = input("유저네임 입력")
-        password = input("비밀번호 입력")
+        name = input("이름입력\n")
+        username = input("유저네임 입력\n")
+        password = input("비밀번호 입력\n")
         for_hashed_pw =str(password)
         hashed_pw = hashlib.sha256(for_hashed_pw.encode()).hexdigest()
         # name 회원이름, username : 회원아이디, password: hashing된 비밀번호로 전환하여 등록
