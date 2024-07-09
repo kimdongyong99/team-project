@@ -52,7 +52,7 @@ class Post:
 class working():
     def create_post():
         if len(members) > 0:
-            author = input("아이디 입력\n>>>")
+            author = input("유저네임 입력\n")
             for member in members:
                 if member.username == author:
                     title = input("제목\n>>>")
@@ -74,7 +74,7 @@ class working():
         if len(posts) > 0:
             print("1. 게시글 제목\n")
             print("2. 게시글 내용\n")
-            print("3. 아이디\n")
+            print("3. 유저네임\n")
             search_type = input("무엇을 검색하시겠습니까?\n")
             if search_type == "1":
                 print("게시글 제목으로 검색합니다.")
@@ -89,7 +89,7 @@ class working():
                     if search_word in post.content:
                         search_content.append(post.content)
             elif search_type == "3":
-                search_word = input("아이디를 입력해주세요: \n")
+                search_word = input("유저네임을 입력해주세요: \n")
                 for post in posts:
                     if search_word in post.author:
                         search_result.append(post.title)
@@ -112,7 +112,7 @@ class working():
 
     def join():
         name = input("이름입력")
-        username = input("아이디입력")
+        username = input("유저네임 입력")
         password = input("비밀번호 입력")
         for_hashed_pw =str(password)
         hashed_pw = hashlib.sha256(for_hashed_pw.encode()).hexdigest()
