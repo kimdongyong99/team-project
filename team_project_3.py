@@ -5,7 +5,6 @@ import hashlib
 # 빈리스트 만들기
 members = []  # 회원들의 정보를 담고 있는 리스트
 posts = []    # 게시글을 담고 있는 리스트
-salt = "team14"
 
 
 class Member:
