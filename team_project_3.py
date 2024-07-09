@@ -52,16 +52,17 @@ class Post:
 class working():
     def create_post():
         if len(members) > 0:
-            author = input("유저네임 입력\n")
-            for member in members:
-                if member.username == author:
-                    title = input("제목\n>>>")
-                    content = input("내용\n>>>")
-                    post = Post(title, content, author)
-                    posts.append(post)
-                    print(f"{post.author}님의 게시글이 작성되었습니다.\n")
-                else:
-                    print("작성자가 일치하지 않습니다. 다시 입력하세요\n")
+            while True:
+                author = input("유저네임 입력\n")
+                for member in members:
+                    if member.username == author:
+                        title = input("제목\n")
+                        content = input("내용\n")
+                        post = Post(title, content, author)
+                        posts.append(post)
+                        print(f"{post.author}님의 게시글이 작성되었습니다.\n\n\n")
+                        return
+                print("작성자가 일치하지 않습니다. 다시 입력하세요\n")
         else:
             print("회원가입을 먼저 해주세요\n")
 
@@ -156,7 +157,7 @@ class working():
                 if len(posts) > 0:
                     for i, post in enumerate(posts):
                         num = i + 1
-                        print(f"글번호{num}\n")
+                        print(f"글번호{num}")
                         post.display_post()
                 else:
                     print("등록된 게시글이 없습니다")
