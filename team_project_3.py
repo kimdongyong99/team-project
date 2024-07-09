@@ -62,7 +62,6 @@ class working():
                     print(f"{post.author}님의 게시글이 작성되었습니다.\n")
                 else:
                     print("작성자가 일치하지 않습니다. 다시 입력하세요\n")
-                    working.create_post()
         else:
             print("회원가입을 먼저 해주세요\n")
 
@@ -117,9 +116,9 @@ class working():
         for_hashed_pw =str(password)
         hashed_pw = hashlib.sha256(for_hashed_pw.encode()).hexdigest()
         # name 회원이름, username : 회원아이디, password: hashing된 비밀번호로 전환하여 등록
-        member = Member(name, username, hashed_pw)
-        members.append(member)  # 회원리스트에 추가
-        print(f"{member.name}님의 회원가입이 완료되었습니다.\n")
+        member_ = Member(name, username, hashed_pw)
+        members.append(member_)  # 회원리스트에 추가
+        print(f"{member_.name}님의 회원가입이 완료되었습니다.\n")
 
     def option():
         while True:
@@ -140,15 +139,13 @@ class working():
             elif choice == "2":
                 print("회원정보리스트 출력")
                 if len(members) > 0:
-                    for member in members:
-                        member.display()
+                    for member__ in members:
+                        member__.display()
                 else:
                     print("등록된 회원이 없습니다.")
                 print("\n")
-
                 continue
-
-
+            
             elif choice == "3":
                 print("게시글 작성")
                 working.create_post()
